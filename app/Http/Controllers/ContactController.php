@@ -42,7 +42,7 @@ class ContactController extends Controller
         return view('UpdateContact',['item'=>$single]);
         
 }
-public function Update(Request $req ,$id){
+public function Update(contactrequest $req ,$id){
     $update =DB::table('contacts')->where('id',$id)->update([
 'name'=> $req->name,
 'email'=> $req->email,
@@ -50,6 +50,9 @@ public function Update(Request $req ,$id){
 'phone'=> $req->phone]);
 if($update){
     return redirect()->route('contact');
+}
+else {
+    echo "Not Upadated";
 }
 }
 

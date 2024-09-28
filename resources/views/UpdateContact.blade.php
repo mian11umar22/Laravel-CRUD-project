@@ -18,7 +18,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Email</label>
-    <input type="email" value="{{ $item->email }}" class="form-control" name="email" placeholder="enter email">
+    <input type="text" value="{{ $item->email }}" class="form-control" name="email" placeholder="enter email">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Address</label>
