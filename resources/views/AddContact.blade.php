@@ -13,20 +13,48 @@
   @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control"  name="name" placeholder="Enter name">
-   
+    <input type="text" value="{{ old('name') }}" class="form-control"  name="name" placeholder="Enter name">
+    <span>
+      <div class="text-danger">
+      @error('name')
+      {{ $message }}
+      @enderror
+    </span>
+  </div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Email</label>
-    <input type="email" class="form-control" name="email" placeholder="enter email">
+    <input type="text" value="{{ old('email') }}" class="form-control" name="email" placeholder="enter email">
+    <span>
+      <div class="text-danger">
+      @error('email')
+      {{ $message }}
+      @enderror
+    </span>
+
+  </div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Address</label>
-    <input type="text" class="form-control" name="address" placeholder=" Enter address">
+    <input type="text"  value="{{ old('address') }}" class="form-control" name="address" placeholder=" Enter address">
+    <span>
+      <div class="text-danger">
+      @error('address')
+      {{ $message }}
+      @enderror
+    </span>
+  </div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Phone</label>
-    <input type="text" class="form-control" name="phone" placeholder=" Enter phone">
+    <input type="text"  value="{{ old('phone') }}"class="form-control" name="phone" placeholder=" Enter phone">
+    <span>
+      <div class="text-danger">
+      @error('phone')
+      {{ $message }}
+      @enderror
+    </span>
+  </div>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

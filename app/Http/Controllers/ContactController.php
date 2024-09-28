@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\contactrequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
     public function show(){
-        $contact =DB::table('contacts')->get();
+        $contact =DB::table('contacts')->paginate(4);
         return view('contact',['data'=>$contact]);
     }
     public function SingleContact(string $id)
@@ -21,7 +22,7 @@ class ContactController extends Controller
        if($del)
        return redirect()->route('contact');
        }
-       public function Add( Request $req){
+       public function Add( contactrequest $req){
         $add =DB::table('contacts')->insert([
 'name'=> $req->name,
 'email'=> $req->email,
@@ -34,6 +35,7 @@ class ContactController extends Controller
         else{
             echo "contact not added";
         }
+
        }
        public function UpdateSingle(string $id){
         $single =DB::table('contacts')->find($id);
