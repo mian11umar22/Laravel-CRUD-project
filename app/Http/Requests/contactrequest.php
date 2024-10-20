@@ -25,7 +25,7 @@ class contactrequest extends FormRequest
             'name'=>'required',
             'email'=>'required|email',
             'address'=>'required',
-            'phone'=>'required|min:11',
+            'phone'=>'required|max:11',
         ];
     }
     public function attributes(){
